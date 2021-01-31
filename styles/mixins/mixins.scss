@@ -1,0 +1,17 @@
+$namespace: 'vxui-';
+
+@mixin blockquote($block) {
+  $blockname: $namespace + $block !global;
+
+  .#{$blockname} {
+    @content;
+  }
+}
+
+@mixin status($color) {
+  @each $key, $value in $color {
+    &.#{$blockname}-#{$key} {
+      background: $value;
+    }
+  }
+}
